@@ -1,5 +1,7 @@
 package com.example.cms;
 
+import cn.dev33.satoken.SaManager;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CmdApplication {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
         SpringApplication.run(CmdApplication.class, args);
     }
 

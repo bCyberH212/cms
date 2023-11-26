@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/admin/")
 public class adminController {
-    @GetMapping("/userInfo")
+    @GetMapping("userInfo")
     public String get(){
         return "获取成功";
     }

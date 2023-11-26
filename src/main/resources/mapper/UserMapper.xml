@@ -5,13 +5,18 @@
 <mapper namespace="com.example.cms.generator.mapper.UserMapper">
 
     <resultMap id="BaseResultMap" type="com.example.cms.generator.domain.User">
-            <id property="userId" column="user_id" jdbcType="BIGINT"/>
+            <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="username" column="username" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>
-            <result property="role" column="role" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
-        user_id,username,password,role
+        id,username,password
     </sql>
+    <select id="selectIdByUsernameAndPassword" resultType="int">
+        select id
+        from user
+        where username = #{username,jdbcType=VARCHAR}
+          AND password = #{password,jdbcType=VARCHAR}
+    </select>
 </mapper>
