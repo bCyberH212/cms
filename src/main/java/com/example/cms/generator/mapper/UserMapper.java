@@ -1,17 +1,18 @@
 package com.example.cms.generator.mapper;
 
 import com.example.cms.generator.domain.User;
+import org.apache.ibatis.annotations.Param;
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.apache.ibatis.annotations.Mapper;
 
 /**
 * @author Beings
-* @description 针对表【user】的数据库操作Mapper
-* @createDate 2023-11-08 16:09:05
+* @description 针对表【user(用户表)】的数据库操作Mapper
+* @createDate 2023-11-25 21:49:44
+* @Entity generator.domain.User
 */
-@Mapper
 public interface UserMapper extends BaseMapper<User> {
-
+    int selectIdByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
 }
 
 
